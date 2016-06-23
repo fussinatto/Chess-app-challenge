@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" data-framework="backbonejs">
+<head>
+	<meta charset="utf-8">
+	<title>Chess app - Meetrics challenge</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<section class="b-chess-app">
+
+		<header class="b-header">
+            <h1>Chess app - Meetrics challenge</h1>
+		</header>
+
+        <h3>
+            On the move: <span class="turn-indicator"></span>
+        </h3>
+
+		<section class="b-chess">
+			<table class="chess-board">
+                <tr>
+                    <td class="18"></td>
+                    <td class="28"></td>
+                    <td class="38"></td>
+                    <td class="48"></td>
+                    <td class="58"></td>
+                    <td class="68"></td>
+                    <td class="78"></td>
+                    <td class="88"></td>
+                </tr>
+                <tr>
+                    <td class="17"></td>
+                    <td class="27"></td>
+                    <td class="37"></td>
+                    <td class="47"></td>
+                    <td class="57"></td>
+                    <td class="67"></td>
+                    <td class="77"></td>
+                    <td class="87"></td>
+                </tr>
+                <tr>
+                    <td class="16"></td>
+                    <td class="26"></td>
+                    <td class="36"></td>
+                    <td class="46"></td>
+                    <td class="56"></td>
+                    <td class="66"></td>
+                    <td class="76"></td>
+                    <td class="86"></td>
+                </tr>
+                <tr>
+                    <td class="15"></td>
+                    <td class="25"></td>
+                    <td class="35"></td>
+                    <td class="45"></td>
+                    <td class="55"></td>
+                    <td class="65"></td>
+                    <td class="75"></td>
+                    <td class="85"></td>
+                </tr>
+                <tr>
+                    <td class="14"></td>
+                    <td class="24"></td>
+                    <td class="34"></td>
+                    <td class="44"></td>
+                    <td class="54"></td>
+                    <td class="64"></td>
+                    <td class="74"></td>
+                    <td class="84"></td>
+                </tr>
+                <tr>
+                    <td class="13"></td>
+                    <td class="23"></td>
+                    <td class="33"></td>
+                    <td class="43"></td>
+                    <td class="53"></td>
+                    <td class="63"></td>
+                    <td class="73"></td>
+                    <td class="83"></td>
+                </tr>
+                <tr>
+                    <td class="12"></td>
+                    <td class="22"></td>
+                    <td class="32"></td>
+                    <td class="42"></td>
+                    <td class="52"></td>
+                    <td class="62"></td>
+                    <td class="72"></td>
+                    <td class="82"></td>
+                </tr>
+                <tr>
+                    <td class="11"></td>
+                    <td class="21"></td>
+                    <td class="31"></td>
+                    <td class="41"></td>
+                    <td class="51"></td>
+                    <td class="61"></td>
+                    <td class="71"></td>
+                    <td class="81"></td>
+                </tr>
+
+			</table>
+
+            <aside class="eatenPiecesContainer"></aside>
+
+            <script type="text/template" id="figure-template">
+                <i class="figure <%= color %> <%= name %>"><%= name %></i>
+            </script>
+
+		</section>
+
+        <div class="b-info">
+			<p>Functionalify of all figures except "knight" has been implemented. Some logic is missing, e.g. it is possible to eat the King :). But for the purpose of code review I hope this suffice. </p>
+			<a href="https://gist.github.com/chudaol/4a98560702135377f1041f4cfda33e45" target="_blank" class="btn-view_task">View task</a>
+		</div>
+
+
+		<footer class="b-footer">
+			<p>Best regards from <a href="http://fussinatto.com" target="blank">Dario</a></p>
+		</footer>
+
+	</section>
+
+	<!-- Load JS dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>
+
+	<!-- Load app JS -->
+	<script src="js/models/figure.js"></script>
+	<script src="js/models/pawn.js"></script>
+	<script src="js/models/rook.js"></script>
+	<script src="js/models/knight.js"></script>
+	<script src="js/models/bishop.js"></script>
+	<script src="js/models/queen.js"></script>
+	<script src="js/models/king.js"></script>
+	<script src="js/collections/figure-collection.js"></script>
+	<script src="js/views/figure-view.js"></script>
+	<script src="js/views/app-view.js"></script>
+	<script src="js/app.js"></script>
+
+</body>
+</html>

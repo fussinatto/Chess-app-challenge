@@ -1,0 +1,133 @@
+html,
+body {
+    margin: 0;
+    background-color: #f8f8f8;
+}
+
+.b-chess-app {
+    display: flex;
+    flex-direction: column;
+    width: 560px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+.b-chess{
+    display: flex;
+    flex-direction: row;
+    margin: 30px 0;
+}
+.b-info{
+	font-size: 13px;
+}
+
+/*** Board ***/
+.chess-board {
+    border: 1px solid black;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.chess-board td{
+    padding:0;
+    width: 50px;
+    height: 50px;
+    background-color: #D18B47;
+    box-sizing: border-box;
+    position: relative;
+}
+.chess-board td[data-active="true"]:after{
+    border-color: yellow !important;
+}
+.chess-board td span{
+    pointer-events: none;
+}
+.chess-board tr:nth-child(even) td:nth-child(even),
+.chess-board tr:nth-child(odd) td:nth-child(odd) {
+    background-color: #FFCE9E;
+}
+.chess-board td:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 6px);
+    width: calc(100% - 6px);
+    border: 3px solid transparent;
+    pointer-events: none !important;
+}
+.chess-board td:hover:after{
+    border-color: lime;
+}
+
+
+/*** Eaten Pieces ***/
+.eatenPiecesContainer {
+    margin: 0 10px;
+    padding: 10px;
+    flex: 1 0 100px;
+    background-color: #f0f2e7;
+}
+.eatenPiecesContainer .figure {
+    width: 35px;
+    height: 35px;
+    background-size: contain;
+}
+
+
+/*** Turn Indicator ***/
+.turn-indicator {
+    text-transform: uppercase;
+}
+
+
+/*** Figures ***/
+.figure {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-indent: -99999px;
+    background-repeat: no-repeat;
+}
+
+.king.white{
+    background-image: url('../img/king-w.png');
+}
+.king.black{
+    background-image: url('../img/king-b.png');
+}
+.queen.white{
+    background-image: url('../img/queen-w.png');
+}
+.queen.black{
+    background-image: url('../img/queen-b.png');
+}
+.rook.white{
+    background-image: url('../img/rook-w.png');
+}
+.rook.black{
+    background-image: url('../img/rook-b.png');
+}
+.bishop.white{
+    background-image: url('../img/bishop-w.png');
+}
+.bishop.black{
+    background-image: url('../img/bishop-b.png');
+}
+.knight.white{
+    background-image: url('../img/knight-w.png');
+}
+.knight.black{
+    background-image: url('../img/knight-b.png');
+}
+.pawn.white{
+    background-image: url('../img/pawn-w.png');
+}
+.pawn.black{
+    background-image: url('../img/pawn-b.png');
+}
+
+/*** Footer ***/
+.b-footer {
+    font-size: 12px;
+    padding: 15px;
+    margin-top: auto;
+}
