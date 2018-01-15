@@ -59,7 +59,6 @@ var app = app || {};
         });
       });
 
-
     },
 
     /**
@@ -137,4 +136,17 @@ var app = app || {};
       }
     }
   });
+
+
+    /**
+   * Moves figure via console / websockets
+   * @param {string} oldPos - position of tergeted figure 
+   * @param {string} newPos - new posigion 
+   */
+  app.moveFigure = function(oldPos, newPos){
+    var targetFigure = app.figures.where({ position: oldPos })[0];
+    if(targetFigure) {
+      targetFigure.set('position', newPos)
+    }
+  }
 })(jQuery);
