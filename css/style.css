@@ -131,3 +131,7 @@ body {
     padding: 15px;
     margin-top: auto;
 }
+
+h1, h2, h3 {
+    margin: 10px 0;
+}
