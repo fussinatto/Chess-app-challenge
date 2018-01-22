@@ -17,7 +17,7 @@ var app = app || {};
     el: '.b-chess-app',
 
     events: {
-      'click td': 'handleSquareClick',
+      'click td': 'handleSquareClick'
     },
 
     initialize: function() {
@@ -26,20 +26,23 @@ var app = app || {};
       this.listenTo(app.figures, 'add', this.addOne);
       this.listenTo(app.figures, 'remove', this.removeOne);
       //this.listenTo(app.eaten, 'add', this.addEaten);
-
+      
       // Variables
       this.activeFigure = null;
       this.activeSquare = null;
       this.whitesTurn = true;
-
+      
       // DOM
       this.turnIndicator = $('.turn-indicator').text('white');
       this.eatenContainer = $('.eatenPiecesContainer');
-
+      
       // Init
       this.addFigures();
+      
+      var handleBodyClickBinded = this.handleBodyClick.bind(this)
+      $('body').bind('click', handleBodyClickBinded);
     },
-
+    
     addFigures: function() {
 
       // Ad  Pawns
@@ -88,6 +91,12 @@ var app = app || {};
 
       // ... end destroy the model
       figure.destroy();
+    },
+    handleBodyClick: function (e) {
+      if(e.target.tagName !== 'TD' && this.activeFigure && this.activeSquare){
+        this.activeSquare.removeAttr('data-active'); // remove "active" attribute for styling
+        this.activeSquare = this.activeFigure = null;
+      }
     },
 
     /**

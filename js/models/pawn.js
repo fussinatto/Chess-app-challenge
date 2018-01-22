@@ -31,7 +31,7 @@ var app = app || {};
      
       if (sqareFigure) {
         //if Figure exists means pawn should change the column and move forward one position
-        if (this.colDifference === 1 && this.rowDifference === 1) {
+        if (Math.abs(this.colDifference) === 1 && Math.abs(this.rowDifference) === 1) {
 
           this.set('position', this.newPosition);
           app.figures.remove(sqareFigure);
