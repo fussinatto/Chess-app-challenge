@@ -43,7 +43,7 @@ var app = app || {};
       } else {
         var maxMove = this.get('initPosition') ? 2 : 1;
         // Determine if new position is the same column and one row apart
-        if (this.colDifference === 0 && this.rowDifference && this.rowDifference <= maxMove) {
+        if (this.colDifference === 0 && this.rowDifference && Math.abs(this.rowDifference) <= maxMove) {
           
           this.set('position', this.newPosition);
           this.set('initPosition', false);
